@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./Error";
 import App from "./App";
+import Home from "./Home";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -12,6 +13,10 @@ const Router = () => {
     {
       path: "/shop",
       element: <Error></Error>,
+    },
+    {
+      path: "home",
+      element: <Home></Home>,
     },
   ]);
 

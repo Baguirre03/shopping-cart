@@ -2,13 +2,17 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <>
-      <div>Hello there</div>
+    <header>
+      <h1 className="hello">Shop</h1>
       <nav>
-        <Link to="home">Home</Link>
-        <Link to="shop">Shop</Link>
+        <button>
+          <Link to="home">Home</Link>
+        </button>
+        <button type="button">
+          <Link to="shop">Shop</Link>
+        </button>
       </nav>
-    </>
+    </header>
   );
 };
 
