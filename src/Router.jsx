@@ -11,10 +11,6 @@ const Router = () => {
       errorElement: <Error />,
     },
     {
-      path: "/shop",
-      element: <Error></Error>,
-    },
-    {
       path: "home",
       element: <Home></Home>,
     },

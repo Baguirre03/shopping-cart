@@ -1,24 +1,23 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Router from "../src/Router";
-import Navbar from "../src/Nav";
 import userEvent from "@testing-library/user-event";
 
 describe("Nav component", () => {
-  render(
-    <Router>
-      <Navbar></Navbar>
-    </Router>
-  );
   it("renders correct title", () => {
-    expect(screen.getByRole("heading").textContent).toMatch(/Shop/);
+    render(<Router></Router>);
+    expect(screen.getByRole("heading").textContent).toEqual("Shopping cart");
   });
+});
 
-  const user = userEvent.setup();
-  const button = screen.getByRole("button", { name: "Shop" });
+describe("click button works", () => {
+  it("clicks home", async () => {
+    const user = userEvent.setup();
+    render(<Router></Router>);
 
-  it("has nav links", async () => {
+    const button = screen.getByRole("button");
     await user.click(button);
-    expect(screen.getByRole("heading").textContent).toMatch(/home page!/i);
+
+    expect(screen.getByRole("heading").textContent).toEqual("Home Page");
   });
 });
