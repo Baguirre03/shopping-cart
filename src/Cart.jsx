@@ -16,8 +16,8 @@ export default function Cart({ cart, cartItems, minusCart, addCart }) {
     <div className="cart">
       <h1>Cart</h1>
       <h3>Count {cart}</h3>
-      <h3>{Math.round(total)}</h3>
-      <div className="items">
+      <h3>Total: ${Math.round(total)}</h3>
+      <div className="items-checkout">
         {cartItems.length
           ? cartItems.map((item) => {
               return (
@@ -26,10 +26,11 @@ export default function Cart({ cart, cartItems, minusCart, addCart }) {
                   minusCart={minusCart}
                   addCart={addCart}
                   key={item.id}
+                  cart={true}
                 ></ItemCard>
               );
             })
-          : "hi"}
+          : "Empty Cart!"}
       </div>
     </div>
   );

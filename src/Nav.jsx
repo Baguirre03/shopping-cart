@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom";
+import Button from "./components/Button";
 
 const Navbar = () => {
   return (
     <header>
-      <h1>Shop name</h1>
+      <h1>
+        <Button to="/">Shop Name</Button>
+      </h1>
       <nav>
-        <Link to="/">
-          <button>Home</button>
-        </Link>
-        <Link to="shop">
-          <button>Shop</button>
-        </Link>
+        <Button to="/">Home</Button>
+        <Button to="/shop">Shop</Button>
       </nav>
     </header>
   );
