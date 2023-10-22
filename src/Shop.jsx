@@ -1,7 +1,5 @@
-import Navbar from "./Nav";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Cart from "./Cart";
 import ItemCard from "./components/ItemCard";
 
 async function fetchData() {
