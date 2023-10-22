@@ -31,6 +31,7 @@ export default function Shop({ cart, addCart, minusCart, handleCart }) {
         <h2>Shop</h2>
         <Link to="/cart">
           <h2>Cart</h2>
+          <h4>{cart}</h4>
         </Link>
       </div>
       <div>
