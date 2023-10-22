@@ -35,7 +35,7 @@ function App() {
       };
     } else {
       copy.push({
-        img: data.image,
+        image: data.image,
         description: data.description,
         price: data.price,
         title: data.title,
@@ -58,7 +58,6 @@ function App() {
     } else {
       copy.splice(index, 1);
     }
-    console.log(copy);
     setCartItems(copy);
   }
 

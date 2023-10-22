@@ -2,7 +2,7 @@ export default function ItemCard({ data, minusCart, addCart }) {
   return (
     <div className="item">
       <div className="info">
-        <img src={data.img} alt={data.description} />
+        <img src={data.image} alt={data.description} />
         <h4>{data.title}</h4>
         <p>{data.description}</p>
         <p>{data.count > 1 && data.count}</p>
