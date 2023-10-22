@@ -1,5 +1,8 @@
 import Navbar from "./Nav";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Cart from "./Cart";
+import ItemCard from "./components/ItemCard";
 
 async function fetchData() {
   try {
@@ -11,8 +14,9 @@ async function fetchData() {
   }
 }
 
-export default function Shop() {
+export default function Shop({ cart, addCart, minusCart, handleCart }) {
   const [items, setItems] = useState(null);
+
   useEffect(() => {
     const dataFetch = async () => {
       const data = await fetchData();
@@ -20,12 +24,27 @@ export default function Shop() {
     };
     dataFetch();
   }, []);
+
   return (
     <>
-      <h1>Shop</h1>
+      <div className="heading-shop">
+        <h2>Shop</h2>
+        <Link to="/cart">
+          <h2>Cart</h2>
+        </Link>
+      </div>
       <div>
         {items
-          ? items.map((item) => <h4 key={item.id}>{item.title}</h4>)
+          ? items.map((item, index) => (
+              <ItemCard
+                key={item.id}
+                data={item}
+                addCart={addCart}
+                minusCart={minusCart}
+                handleCart={handleCart}
+                index={index}
+              />
+            ))
           : "Loading"}
       </div>
     </>
