@@ -11,8 +11,12 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   function minusCart(data) {
-    setCart(cart - 1);
-    handleSubtract(data);
+    if (!cartItems.filter((e) => e.title === data.title).length) {
+      return;
+    } else {
+      setCart(cart - 1);
+      handleSubtract(data);
+    }
   }
 
   function addCart(data) {
@@ -22,19 +26,39 @@ function App() {
 
   function handleCartItems(data) {
     let copy = [...cartItems];
-    copy.push({
-      img: data.image,
-      description: data.description,
-      price: data.price,
-      title: data.title,
-      id: crypto.randomUUID(),
-    });
+    if (cartItems.filter((el) => el.title === data.title).length) {
+      const index = copy.findIndex((el) => el.title === data.title);
+      let item = copy[index];
+      copy[index] = {
+        ...item,
+        count: (item.count += 1),
+      };
+    } else {
+      copy.push({
+        img: data.image,
+        description: data.description,
+        price: data.price,
+        title: data.title,
+        id: crypto.randomUUID(),
+        count: 1,
+      });
+    }
     setCartItems(copy);
   }
 
   function handleSubtract(data) {
     let copy = [...cartItems];
-    copy.splice(copy.indexOf(copy.find((dif) => dif.id === data.id)), 1);
+    const index = copy.findIndex((el) => el.title === data.title);
+    let item = copy[index];
+    if (item.count > 1) {
+      item = {
+        ...item,
+        count: (item.count -= 1),
+      };
+    } else {
+      copy.splice(index, 1);
+    }
+    console.log(copy);
     setCartItems(copy);
   }
 

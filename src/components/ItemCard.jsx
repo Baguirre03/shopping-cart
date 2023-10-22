@@ -5,6 +5,7 @@ export default function ItemCard({ data, minusCart, addCart }) {
         <img src={data.img} alt={data.description} />
         <h4>{data.title}</h4>
         <p>{data.description}</p>
+        <p>{data.count > 1 && data.count}</p>
       </div>
       <div>
         <button onClick={() => minusCart(data)}>-</button>
