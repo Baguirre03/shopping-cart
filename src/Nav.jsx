@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import Button from "./components/Button";
+import Cart from "./Cart";
 
 const Navbar = () => {
   return (
     <header>
       <h1>
-        <Button to="/">Shop Name</Button>
+        <Button to="/">Super Cool Shop</Button>
       </h1>
       <nav>
         <Button to="/">Home</Button>
