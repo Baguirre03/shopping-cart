@@ -11,7 +11,7 @@ import { mockComponent } from "react-dom/test-utils";
 describe("Home Page", () => {
   it("renders home page correctly", () => {
     render(<Home></Home>);
-    expect(screen.getByRole("heading").textContent).toEqual("Home Page");
+    expect(screen.getByRole("heading").textContent).toEqual("Super Cool Shop");
   });
 });
 
@@ -52,3 +52,4 @@ describe.skip("Home Page", () => {
     expect(onClick).not.toHaveBeenCalled();
   });
 });
+

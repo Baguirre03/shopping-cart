@@ -1,0 +1,50 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`main page works > loads the page 1`] = `
+<div>
+  <header>
+    <h1>
+      <a
+        href="/"
+      >
+        <button>
+          Super Cool Shop
+        </button>
+      </a>
+    </h1>
+    <nav>
+      <a
+        href="/"
+      >
+        <button>
+          Home
+        </button>
+      </a>
+      <a
+        href="/shop"
+      >
+        <button>
+          Shop
+        </button>
+      </a>
+    </nav>
+  </header>
+  <div
+    class="home-page"
+  >
+    <div
+      class="center-content"
+    >
+      <span
+        class="background"
+      />
+      <h2>
+        Super Cool Shop
+      </h2>
+      <div>
+        This is definitely a shop
+      </div>
+    </div>
+  </div>
+</div>
+`;
