@@ -13,10 +13,10 @@ export default function Cart({ cart, cartItems, minusCart, addCart }) {
   });
 
   return (
-    <div className="cart">
+    <div className="checkout-container">
       <h1>Cart</h1>
-      <h3>Count {cart}</h3>
-      <h3>Total: ${Math.round(total)}</h3>
+      <h3>Total Items in Cart {cart}</h3>
+      <h3>Total cost: ${Math.round(total)}</h3>
       <div className="items-checkout">
         {cartItems.length
           ? cartItems.map((item) => {

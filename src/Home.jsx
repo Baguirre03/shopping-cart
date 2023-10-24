@@ -3,8 +3,8 @@ const Home = () => {
     <div className="home-page">
       <div className="center-content">
         <span className="background"></span>
-        <h2>Home Page</h2>
-        <div>children here</div>
+        <h2>Super Cool Shop</h2>
+        <div>This is definitely a shop</div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ItemCard from "./components/ItemCard";
+import Loading from "./components/Loading";
 
 async function fetchData(url) {
   try {
@@ -19,7 +19,7 @@ const categories = [
   "women's clothing",
 ];
 
-export default function Shop({ cart, addCart, minusCart, handleCart }) {
+export default function Shop({ addCart, minusCart, handleCart }) {
   const [items, setItems] = useState(null);
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
@@ -34,30 +34,34 @@ export default function Shop({ cart, addCart, minusCart, handleCart }) {
     dataFetch();
   }, [currentCategory]);
 
+  let upperCase = categories.map(
+    (item) => item.charAt(0).toUpperCase() + item.slice(1)
+  );
+
   return (
     <>
-      <div className="heading-shop">
-        <h2>Shop</h2>
-        <Link to="/cart">
-          <h2>Cart</h2>
-          <h4>{cart}</h4>
-        </Link>
-      </div>
-      <div className="options">
-        {categories &&
-          categories.map((cat, index) => (
-            <button
-              className={cat === currentCategory ? "option selected" : "option"}
-              onClick={() => setCurrentCategory(categories[index])}
-              key={cat}
-            >
-              {cat}
-            </button>
-          ))}
-      </div>
-      <div className="items-container">
-        {items
-          ? items.map((item, index) => (
+      <div className="shop-area">
+        <div className="options">
+          <h3>Options</h3>
+          <ul>
+            {categories &&
+              upperCase.map((cat, index) => (
+                <li key={cat} className="option-li">
+                  <button
+                    className={
+                      cat === currentCategory ? "option selected" : "option"
+                    }
+                    onClick={() => setCurrentCategory(categories[index])}
+                  >
+                    {cat}
+                  </button>
+                </li>
+              ))}
+          </ul>
+        </div>
+        <div className="items-container">
+          {items ? (
+            items.map((item, index) => (
               <ItemCard
                 key={item.id}
                 data={item}
@@ -67,7 +71,10 @@ export default function Shop({ cart, addCart, minusCart, handleCart }) {
                 index={index}
               />
             ))
-          : "Loading"}
+          ) : (
+            <Loading></Loading>
+          )}
+        </div>
       </div>
     </>
   );
