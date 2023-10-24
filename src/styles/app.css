@@ -263,6 +263,7 @@ a {
     flex-direction: column;
     flex: 1;
     background-color: white;
+    padding: 1rem;
     justify-self: center;
     align-items: center;
 }
