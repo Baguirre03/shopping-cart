@@ -1,4 +1,4 @@
-# Project: AOT Memory Card
+# Project: THE Shop - Shopping cart
 ### Result
 
 ### [Link to Page](https://the-super-cool-shop.netlify.app/shop)
