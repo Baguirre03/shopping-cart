@@ -140,9 +140,6 @@ img {
     gap: 5vw;
 }
 
-
-.items-checkout .item {}
-
 .option.selected {
     background-color: var(--light);
     color: white;
