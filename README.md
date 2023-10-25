@@ -1,7 +1,7 @@
 # Project: THE Shop - Shopping cart
 ### Result
 
-### [Link to Page](https://the-super-cool-shop.netlify.app/shop)
+### [Link to Page](https://the-super-cool-shop.netlify.app)
 ![screenshot of image](./src/assets/screenshot2.png)
 
 ### About the project
