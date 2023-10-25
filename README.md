@@ -2,7 +2,7 @@
 ### Result
 
 ### [Link to Page](https://the-super-cool-shop.netlify.app/shop)
-[screenshot of image](./src/assets/screenshot2.png)
+![screenshot of image](./src/assets/screenshot2.png)
 
 ### About the project
 
